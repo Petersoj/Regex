@@ -146,8 +146,6 @@ public class RegexPanel extends JPanel {
 				}else{
 					shownString += "Last Name:    false\n\n";
 				}
-				
-				shownString += "Last Name:    " + matchedLastName + "\n\n";
 				if(validPhone){
 					shownString += "Phone Number:    " + true + "\n";
 					shownString += "Location of Phone:    " + phoneJSONObject.getString("location") + "\n\n";
