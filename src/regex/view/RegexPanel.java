@@ -135,7 +135,18 @@ public class RegexPanel extends JPanel {
 				JsonObject emailJSONObject = Jsoner.deserialize(emailJSON, new JsonObject());
 				boolean validEmail = emailJSONObject.getBoolean("format_valid") != null && emailJSONObject.getBoolean("format_valid");
 				
-				String shownString = "First Name:    " + matchedFirstName + "\n\n";
+				String shownString = "";
+				if(matchedFirstName && firstNameField.getText().length() > 2 && firstNameField.getText().length() < 30){
+					shownString = "First Name:    valid\n\n";
+				}else{
+					shownString = "First Name:     inavlid\n\n";
+				}
+				if(matchedLastName && lastNameField.getText().length() > 2 && lastNameField.getText().length() < 30){
+					shownString += "Last Name:    valid\n\n";
+				}else{
+					shownString += "Last Name:    false\n\n";
+				}
+				
 				shownString += "Last Name:    " + matchedLastName + "\n\n";
 				if(validPhone){
 					shownString += "Phone Number:    " + true + "\n";
