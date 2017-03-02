@@ -13,7 +13,7 @@ public class RegexFrame extends JFrame {
 	public RegexFrame(RegexController regexController){
 		super();
 		this.regexController = regexController;
-		this.regexPanel = new RegexPanel(this);
+		this.regexPanel = new RegexPanel(regexController);
 		
 		this.setupFrame();
 	}
